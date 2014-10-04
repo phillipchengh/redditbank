@@ -1,15 +1,17 @@
 var express = require('express');
 var app = express();
 
-// app.configure('development', function() {
-//   app.use(express.compress());
-//   app.set('port', 1234);
-// });
+var env = process.env.NODE_ENV || 'development';
+var port = 1234;
+
+if (env === 'development') {
+  app.set('port', port);
+}
+
+app.use(express.static(__dirname + '/static'));
 
 app.get('/', function(req, res) {
-  res.send('Hello World');
+  res.sendfile('static/index.html');
 });
 
-var server = app.listen(1234, function() {
-  
-});
+app.listen(app.get('port'));
