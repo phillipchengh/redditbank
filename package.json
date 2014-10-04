@@ -1,0 +1,10 @@
+{
+  "name": "redditbank",
+  "version": "0.0.1",
+  "author": "phillip <phillip.chen@hotmail.com",
+  "description": "your reddit bank",
+  "dependencies": {
+    "dotenv": "0.4.0",
+    "express": "4.x"
+  }
+}
